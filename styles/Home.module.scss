@@ -33,19 +33,20 @@
   line-height: 1.15;
   font-size: 4rem;
 
-  &,.description {
+  &,
+  .description {
     text-align: center;
   }
 
   a {
-
     color: #0070f3;
     text-decoration: none;
-  
-    &:hover,&:focus,&:active {
+
+    &:hover,
+    &:focus,
+    &:active {
       text-decoration: underline;
-  
-    } 
+    }
   }
 }
 
@@ -83,7 +84,9 @@
   transition: color 0.15s ease, border-color 0.15s ease;
   max-width: 300px;
 
-  &:hover,&:focus,&:active {
+  &:hover,
+  &:focus,
+  &:active {
     color: #0070f3;
     border-color: #0070f3;
   }
@@ -96,7 +99,7 @@
   p {
     margin: 0;
     font-size: 1.25rem;
-    line-height: 1.5;    
+    line-height: 1.5;
   }
 }
 
