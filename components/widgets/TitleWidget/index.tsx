@@ -1,5 +1,5 @@
 import { TitleWidgetProps } from '../../../types';
-import style from './style.module.css';
+import style from './style.module.scss';
 
 export function TitleWidget({ title }: TitleWidgetProps) {
   return (

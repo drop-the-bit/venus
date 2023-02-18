@@ -1,6 +1,6 @@
 import { renderWidgets } from '../../../helpers/renderWidget';
 import { LayoutWidgetProps } from '../../../types';
-import style from './style.module.css';
+import style from './style.module.scss';
 
 export function LayoutWidget({
   direction = 'vertical',
