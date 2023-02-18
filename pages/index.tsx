@@ -1,43 +1,29 @@
-import WidgetArea from '../components/WidgetArea';
-import { WidgetMeta } from '../types';
+import { InferGetStaticPropsType, NextPageContext } from 'next';
+import GameCard from '../components/GameCard';
+import { GAME_INFO_LIST_RESPONSE } from '../constants/mockList';
+import style from './style.module.scss';
 
-const WIDGET_META_LIST: WidgetMeta[] = [
-  { type: 'title', title: 'Title widget' },
-  {
-    type: 'image',
-    src: '/vercel.svg',
-    alt: '',
-    width: 100,
-    height: 100,
-  },
-  {
-    type: 'video',
-    src: '/cat-run.mp4',
-  },
-  {
-    type: 'layout',
-    direction: 'vertical',
-    widgetProps: [
-      {
-        type: 'input',
-        defaultValue: '',
-        placeholder: '입력하세요',
-      },
-      {
-        type: 'button',
-        title: '제출',
-        onClick: () => {
-          alert('submit');
-        },
-      },
-    ],
-  },
-];
+//페이지 콘텐츠 외부 데이터 연동
+export async function getStaticProps(context: NextPageContext) {
+  return {
+    props: {
+      gameInfoList: GAME_INFO_LIST_RESPONSE,
+    },
+  };
+}
 
-export default function Index() {
+export default function Index({
+  gameInfoList,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <div id="content">
-      <WidgetArea widgetMetaList={WIDGET_META_LIST} />
+    <div id="list">
+      <ul className={style.gameInfoList}>
+        {gameInfoList.items.map((gameInfo) => (
+          <li key={gameInfo.id}>
+            <GameCard {...gameInfo} />
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
