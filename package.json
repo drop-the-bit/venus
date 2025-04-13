@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "export": "pnpm build && cp -r dist docs",
+    "clean": "rimraf dist docs",
+    "export": "pnpm clean && pnpm build && cp -r dist docs",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -23,6 +24,7 @@
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^15.15.0",
+    "rimraf": "^6.0.1",
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.24.1",
     "vite": "^6.2.0"
