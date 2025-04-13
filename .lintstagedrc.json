@@ -1,4 +1,0 @@
-{
-  "*.{ts,tsx}": ["yarn lint, yarn format"],
-  "*.{md,json}": ["yarn format"]
-}
