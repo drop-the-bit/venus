@@ -1,5 +1,3 @@
 export function showAlert(message: string): void {
-  {
-    window.Android?.showAlert(message)
-  }
+  window.Android?.showAlert(message);
 }
